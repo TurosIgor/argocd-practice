@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: loki
     server: https://kubernetes.default.svc
-  project: loki
+  project: default
   sources:
     - repoURL: https://github.com/grafana/loki.git
       path: production/helm/loki
