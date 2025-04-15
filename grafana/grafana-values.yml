@@ -1,0 +1,6 @@
+persistence:
+  type: pvc
+  enabled: true
+  # storageClassName: default
+adminUser: admin
+adminPassword: admin
