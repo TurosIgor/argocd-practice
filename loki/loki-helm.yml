@@ -10,12 +10,15 @@ spec:
     namespace: loki
     server: https://kubernetes.default.svc
   project: loki
-  source:
-    path: production/helm/loki
-    helm:
-      valueFiles:
-        - loki-values.yaml
-    repoURL: https://github.com/grafana/loki.git
+  sources:
+    - repoURL: https://github.com/grafana/loki.git
+      path: production/helm/loki
+      helm:
+        valueFiles:
+          - $values/loki/loki-values.yml
+    - repoURL: https://github.com/TurosIgor/argocd-practice.git
+      targetRevision: HEAD
+      ref: values
   syncPolicy:
     automated:
       prune: true
