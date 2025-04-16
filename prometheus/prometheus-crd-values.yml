@@ -1,0 +1,14 @@
+prometheusOperator:
+  enabled: false
+grafana:
+  enabled: false
+alertmanager:
+  enabled: false
+prometheus:
+  enabled: false
+kubeStateMetrics:
+  enabled: false
+nodeExporter:
+  enabled: false
+customResourceValidation:
+  enabled: true
