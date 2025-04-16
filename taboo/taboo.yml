@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: taboo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: taboo
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - repoURL: https://github.com/TurosIgor/taboo.git
+      path: infra/k8s/mongo
+      targetRevision: HEAD
+    - repoURL: https://github.com/TurosIgor/taboo.git
+      path: infra/k8s/backend
+      targetRevision: HEAD
+    - repoURL: https://github.com/TurosIgor/taboo.git
+      path: infra/k8s/frontend
+      targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
