@@ -7,12 +7,17 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: https://github.com/prometheus-community/helm-charts.git
-    path: charts/kube-prometheus-stack
-    targetRevision: HEAD
-    helm:
-      skipCrds: true
+  sources:
+    - repoURL: https://github.com/prometheus-community/helm-charts.git
+      path: charts/kube-prometheus-stack
+      targetRevision: HEAD
+      helm:
+        skipCrds: true
+        valueFiles:
+          - $values/prometheus/prometheus-values.yml
+    - repoURL: https://github.com/TurosIgor/argocd-practice.git
+      targetRevision: HEAD
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: prometheus

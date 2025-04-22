@@ -1,0 +1,23 @@
+extraScrapeConfigs: |
+  - job_name: prometheus-blackbox-exporter
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+        - http://blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
+    
+  - job_name: prometheus-blackbox-exporter-http
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - http://mongo-svc.taboo.svc:27017
+        - http://backend-svc.taboo.svc:3000
+        - http://frontend-lb.taboo.svc
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: http://blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
