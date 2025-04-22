@@ -18,7 +18,7 @@ spec:
         skipCrds: false
         valueFiles:
           - $values/prometheus/prometheus-crd-values.yml
-    - repuURL: https://github.com/TurosIgor/argocd-practice.git
+    - repoURL: https://github.com/TurosIgor/argocd-practice.git
       targetRevision: HEAD
       ref: values
   syncPolicy:
