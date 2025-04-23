@@ -23,4 +23,4 @@ prometheus:
           - source_labels: [__param_target]
             target_label: instance
           - target_label: __address__
-            replacement: http://blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
+            replacement: blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
