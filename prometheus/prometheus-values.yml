@@ -1,28 +1,28 @@
-prometheus:
-  enabled: true
-  prometheusSpec:
-    additionalScrapeConfigs:
-      - job_name: prometheus-blackbox-exporter
-        metrics_path: /metrics
-        scheme: http
-        static_configs:
-          - targets:
-            - blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
+# prometheus:
+#   enabled: true
+#   prometheusSpec:
+#     additionalScrapeConfigs:
+#       - job_name: prometheus-blackbox-exporter
+#         metrics_path: /metrics
+#         scheme: http
+#         static_configs:
+#           - targets:
+#             - blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
         
-      - job_name: prometheus-blackbox-exporter-http
-        metrics_path: /probe
-        scheme: http
-        params:
-          module: [http_2xx]
-        static_configs:
-          - targets:
-            - mongo-svc.taboo.svc:27017
-            - backend-svc.taboo.svc:3000
-            - frontend-lb.taboo.svc
-        relabel_configs:
-          - source_labels: [__address__]
-            target_label: __param_target
-          - source_labels: [__param_target]
-            target_label: instance
-          - target_label: __address__
-            replacement: blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
+#       - job_name: prometheus-blackbox-exporter-http
+#         metrics_path: /probe
+#         scheme: http
+#         params:
+#           module: [http_2xx]
+#         static_configs:
+#           - targets:
+#             - mongo-svc.taboo.svc:27017
+#             - backend-svc.taboo.svc:3000
+#             - frontend-lb.taboo.svc
+#         relabel_configs:
+#           - source_labels: [__address__]
+#             target_label: __param_target
+#           - source_labels: [__param_target]
+#             target_label: instance
+#           - target_label: __address__
+#             replacement: blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
