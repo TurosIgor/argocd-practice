@@ -10,9 +10,14 @@ spec:
     namespace: prometheus
     server: https://kubernetes.default.svc
   project: default
-  source:
-    repoURL: https://github.com/prometheus-community/helm-charts.git
-    path: charts/prometheus-blackbox-exporter
+  sources:
+    - repoURL: https://github.com/prometheus-community/helm-charts.git
+      path: charts/prometheus-blackbox-exporter
+      helm:
+        valueFiles:
+          - $values/blackbox-exporter/blackbox-exporter-values.yml
+    - repoURL: https://github.com/TurosIgor/argocd-practice.git
+      ref: values
 syncPolicy:
   automated:
     selfHeal: true
