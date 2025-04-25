@@ -8,17 +8,6 @@ serviceMonitor:
   enabled: true
   scheme: http
   path: /probe
-  defaults:
-    additionalRelabeling:
-      - source_labels: [__address__]
-        action: replace
-        target_label: __param_target
-      - source_labels: [__param_target]
-        action: replace
-        target_label: instance
-      - target_label: __address__
-        action: replace
-        replacement: blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
   targets:
     - name: taboo-frontend
       url: frontend-lb.taboo.svc
