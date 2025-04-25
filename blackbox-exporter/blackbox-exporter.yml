@@ -18,9 +18,9 @@ spec:
           - $values/blackbox-exporter/blackbox-exporter-values.yml
     - repoURL: https://github.com/TurosIgor/argocd-practice.git
       ref: values
-syncPolicy:
-  automated:
-    selfHeal: true
-    prune: true
-  syncOptions:
-    - CreateNamespace=true
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
