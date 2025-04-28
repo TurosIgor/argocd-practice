@@ -26,8 +26,8 @@
 #             target_label: instance
 #           - target_label: __address__
 #             replacement: blackbox-exporter-prometheus-blackbox-exporter.prometheus.svc:9115
-# prometheus:
-#   prometheusSpec:
-#     serviceMonitorSelectorNilUsesHelmValues: false
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
 grafana:
   enabled: false
