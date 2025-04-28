@@ -20,7 +20,7 @@ serviceMonitor:
       scrapeTimeout: 30s
       module: http_2xx
     - name: taboo-database
-      url: frontend-lb.taboo.svc
+      url: mongo-svc.taboo.svc:27017
       interval: 30s
       scrapeTimeout: 30s
       module: http_2xx
