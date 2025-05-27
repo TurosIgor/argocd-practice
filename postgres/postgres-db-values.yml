@@ -11,3 +11,6 @@ backups:
             resources:
               requests:
                 storage: 1Gi
+pmm:
+  enabled: true
+  secret: postgres-pg-db-pmm-secret
