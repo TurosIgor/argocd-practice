@@ -1,0 +1,13 @@
+backups:
+  pgbackrest:
+    global:
+      repo1-path: /pgbackrest/postgres-operator/postgres-pg-db/repo1
+    repos:
+      - name: repo1
+        volume:
+          volumeClaimSpec:
+            accessModes:
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 1Gi
