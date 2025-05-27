@@ -1,0 +1,4 @@
+secret:
+  name: pmm-secret
+  create: true
+  pmm_password: admin

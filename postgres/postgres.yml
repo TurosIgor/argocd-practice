@@ -20,6 +20,12 @@ spec:
       helm:
         valueFiles:
           - $values/postgres/postgres-db-values.yml
+    - repoURL: https://github.com/percona/percona-helm-charts.git
+      path: charts/pmm
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - $values/postgres/pmm-values.yml
 
     - repoURL: https://github.com/TurosIgor/argocd-practice.git
       targetRevision: HEAD
