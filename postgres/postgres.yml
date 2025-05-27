@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgres-operator
+  name: postgres
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -13,7 +13,14 @@ spec:
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/postgres/postgres-values.yml
+          - $values/postgres/postgres-operator-values.yml
+    - repoURL: https://github.com/percona/percona-helm-charts.git
+      path: charts/pg-db
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - $values/postgres/postgres-db-values.yml
+
     - repoURL: https://github.com/TurosIgor/argocd-practice.git
       targetRevision: HEAD
       ref: values
