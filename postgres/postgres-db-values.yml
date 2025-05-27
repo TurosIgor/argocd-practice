@@ -14,3 +14,4 @@ backups:
 pmm:
   enabled: true
   secret: postgres-pg-db-pmm-secret
+  serverHost: https://monitoring-service.postgres.svc.cluster.local
