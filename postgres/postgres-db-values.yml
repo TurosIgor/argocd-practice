@@ -7,6 +7,9 @@ backups:
       repo1-path: /pgbackrest/repo1
     repos:
       - name: repo1
+        schedules:
+          full: "0 0 * * 6"
+          differential: "0 1 * * 1-6"
         volume:
           volumeClaimSpec:
             accessModes:
