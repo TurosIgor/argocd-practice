@@ -10,7 +10,7 @@ backups:
               - ReadWriteOnce
             resources:
               requests:
-                storage: 1Gi
+                storage: 5Gi
 pmm:
   enabled: true
   secret: postgres-pg-db-pmm-secret
