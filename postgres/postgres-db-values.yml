@@ -1,5 +1,8 @@
 backups:
   pgbackrest:
+    configuration:
+      - secret:
+          name: postgres-pg-db-pgbackrest
     global:
       repo1-path: /pgbackrest/postgres-operator/postgres-pg-db/repo1
     repos:
