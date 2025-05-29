@@ -12,3 +12,7 @@ prometheus-node-exporter:
   enabled: false
 kube-state-metrics:
   enabled: false
+vmsingle:
+  enabled: false
+vmcluster:
+  enabled: false
