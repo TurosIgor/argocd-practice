@@ -26,7 +26,7 @@ serviceMonitor:
       module: http_2xx
 prometheusRule:
   enabled: true
-  namespace: prometheus
+  namespace: monitoring
   rules:
     - alert: BlackboxProbeFailed
       annotations:
