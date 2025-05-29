@@ -6,18 +6,7 @@ vmagent:
   spec:
     externalLabels:
       k8s_cluster_id: minikube
-victoria-metrics-operator:
-  serviceMonitor:
-    vm: false
-  operator:
-    disable_prometheus_converter: true
 vmalert:
-  enabled: false
-grafana:
-  enabled: false
-prometheus-node-exporter:
-  enabled: false
-kube-state-metrics:
   enabled: false
 vmsingle:
   enabled: false
