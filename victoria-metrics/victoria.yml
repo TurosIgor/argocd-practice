@@ -13,7 +13,7 @@ spec:
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/postgres/victoria-values.yml
+          - $values/victoria-metrics/victoria-values.yml
     - repoURL: https://github.com/TurosIgor/argocd-practice.git
       targetRevision: HEAD
       ref: values
