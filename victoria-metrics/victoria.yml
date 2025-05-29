@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: victoria-metrics
+  name: vm
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -14,6 +14,7 @@ spec:
       helm:
         valueFiles:
           - $values/victoria-metrics/victoria-values.yml
+          - values.minikube.yaml
     - repoURL: https://github.com/TurosIgor/argocd-practice.git
       targetRevision: HEAD
       ref: values

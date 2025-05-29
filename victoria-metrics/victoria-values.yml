@@ -6,3 +6,9 @@ vmagent:
   spec:
     externalLabels:
       k8s_cluster_id: minikube
+grafana:
+  enabled: false
+prometheus-node-exporter:
+  enabled: false
+kube-state-metrics:
+  enabled: false
