@@ -1,7 +1,7 @@
 external:
   vm:
     write:
-      url: https://monitoring-service.monitoring.svc.cluster.local
+      url: https://monitoring-service.monitoring.svc.cluster.local/victoriametrics/api/v1/write
 vmagent:
   spec:
     externalLabels:
