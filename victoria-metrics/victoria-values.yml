@@ -6,6 +6,15 @@ vmagent:
   spec:
     externalLabels:
       k8s_cluster_id: minikube
+kube-state-metrics:
+  volumeMounts:
+    - name: crd-config
+      mountPath: /etc/ksm/customresource-config
+  volumes:
+    - name: crd-config
+      configMap:
+        name: customresource-config-ksm
+
 vmalert:
   enabled: false
 vmsingle:
