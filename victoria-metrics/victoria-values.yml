@@ -7,7 +7,7 @@ vmagent:
     externalLabels:
       k8s_cluster_id: minikube
 vmalert:
-  remoteWriteVMAgent: true
+  enabled: false
 grafana:
   enabled: false
 prometheus-node-exporter:
